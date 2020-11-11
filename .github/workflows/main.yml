@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Set Vars
+        run: |
+          for NUM in 1 2 3 4 5 .. N
+          do
+            echo "VARIABLE=BLAH$NUM" >> $GITHUB_ENV
+            echo "BLAH$NUM=BLAHBLAH$NUM" >> $GITHUB_ENV
+            echo ${{ env[env.VARIABLE] }}
+          done
+
+      - name: Test Vars
+        run: |
+          for NUM in 1 2 3 4 5 .. N
+          do
+            echo "VARIABLE=BLAH$NUM" >> $GITHUB_ENV
+            echo ${{ env[env.VARIABLE] }}
+          done
