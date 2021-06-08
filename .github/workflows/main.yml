@@ -12,6 +12,16 @@ jobs:
 
     steps:
 
+      - name: Group
+        run: |
+          echo "##[group]title"
+          echo "contents"
+          echo "##[endgroup]"
+          echo "outside"
+          echo "##[group]"
+          echo "content2"
+          echo "##[endgroup]"
+
       - name: Set Vars
         run: |
           for NUM in 1 2 3 4 5
