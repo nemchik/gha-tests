@@ -14,6 +14,10 @@ jobs:
 
       - name: Group
         run: |
+          ##[group]title
+          #contents
+          ##[endgroup]
+          #outside
           echo "##[group]title"
           echo "contents"
           echo "##[endgroup]"
