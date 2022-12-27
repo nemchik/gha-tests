@@ -1,0 +1,11 @@
+name: Callable Checkout
+
+on:
+  workflow_dispatch:
+
+jobs:
+  call-checkout:
+    uses: nemchik/gha-tests/.github/workflows/checkout.yml@main
+    secrets: inherit
+    with:
+      wfcmd: ls
