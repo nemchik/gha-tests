@@ -12,6 +12,11 @@ jobs:
 
     steps:
 
+      - name: refs
+        run: |
+          echo "github.ref: ${{ github.ref }}"
+          echo "github.head_ref: ${{ github.head_ref }}"
+
       - name: Group
         run: |
           ##[group]title
